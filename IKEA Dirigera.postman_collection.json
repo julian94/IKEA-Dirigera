@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "f2a67f1e-d8d6-4f4c-b570-de909330b2ef",
+		"name": "IKEA Dirigera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{address}}/v1/devices",
+					"host": [
+						"{{address}}"
+					],
+					"path": [
+						"v1",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inquire Device",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{address}}/v1/devices/2cf243cc-3e55-42c0-a80c-a28b7eeda8e6_1",
+					"host": [
+						"{{address}}"
+					],
+					"path": [
+						"v1",
+						"devices",
+						"2cf243cc-3e55-42c0-a80c-a28b7eeda8e6_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Control Device",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    { \r\n        \"attributes\": {\r\n            \"isOn\": true\r\n        }\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{address}}/v1/devices/2cf243cc-3e55-42c0-a80c-a28b7eeda8e6_1",
+					"host": [
+						"{{address}}"
+					],
+					"path": [
+						"v1",
+						"devices",
+						"2cf243cc-3e55-42c0-a80c-a28b7eeda8e6_1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "address",
+			"value": "https://10.0.0.12:8443"
+		}
+	]
+}
